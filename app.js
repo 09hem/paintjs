@@ -85,7 +85,7 @@ function handleSaveClick(event){
     link.click();
 }
 
-function handleNumber(event){
+function handleNumber(){
     number.innerHTML = "" + range.value;
 }
 
@@ -102,7 +102,8 @@ if (canvas) {
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick))
 
 if (range) {
-    range.addEventListener("input", handleRangeChange)
+    range.addEventListener("input", handleRangeChange);
+    range.addEventListener("input", handleNumber);
 }
 
 if (mode) {
@@ -111,8 +112,4 @@ if (mode) {
 
 if(saveBts){
     saveBts.addEventListener("click", handleSaveClick)
-}
-
-if(range){
-    range.addEventListener("input", handleNumber)
 }
