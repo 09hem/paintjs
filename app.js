@@ -4,6 +4,8 @@ const colors = document.getElementsByClassName("jsColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBts = document.getElementById("jsSave");
+const number = document.getElementById("number");
+
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 550;
@@ -83,6 +85,10 @@ function handleSaveClick(event){
     link.click();
 }
 
+function handleNumber(event){
+    number.innerHTML = "" + range.value;
+}
+
 if (canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
@@ -105,4 +111,8 @@ if (mode) {
 
 if(saveBts){
     saveBts.addEventListener("click", handleSaveClick)
+}
+
+if(range){
+    range.addEventListener("input", handleNumber)
 }
